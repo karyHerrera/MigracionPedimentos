@@ -1,0 +1,836 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MembershipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Imex_Container">
+          <Key>
+            <PropertyRef Name="ContainerId" />
+          </Key>
+          <Property Name="ContainerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Container" Type="varchar" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="Imex_Info_EntregaAduana">
+          <Key>
+            <PropertyRef Name="InfoEntregaId" />
+          </Key>
+          <Property Name="InfoEntregaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntregaId" Type="int" />
+          <Property Name="ContainerId" Type="int" />
+          <Property Name="TranTypeId" Type="int" />
+          <Property Name="ImpoExpo" Type="varchar" MaxLength="16" />
+          <Property Name="Entry" Type="varchar" MaxLength="16" />
+          <Property Name="Guia" Type="varchar" MaxLength="16" />
+          <Property Name="LiberoAduana" Type="varchar" MaxLength="16" />
+          <Property Name="FechaLiberado" Type="datetime" />
+          <Property Name="SalioTren" Type="varchar" MaxLength="2" />
+          <Property Name="SalioPuerta" Type="varchar" MaxLength="16" />
+          <Property Name="UltimoModificado" Type="datetime" />
+          <Property Name="DocEntrega" Type="varchar" MaxLength="10" />
+          <Property Name="BL" Type="varchar" MaxLength="70" />
+          <Property Name="Regimen" Type="varchar" MaxLength="70" />
+          <Property Name="Pedimento" Type="varchar" MaxLength="70" />
+          <Property Name="DescripcionMercancia" Type="varchar" MaxLength="100" />
+          <Property Name="ValorComercial" Type="varchar" MaxLength="70" />
+          <Property Name="PesoMercancia" Type="varchar" MaxLength="70" />
+          <Property Name="UM" Type="varchar" MaxLength="70" />
+          <Property Name="Bultos" Type="varchar" MaxLength="70" />
+          <Property Name="UM_Bultos" Type="varchar" MaxLength="70" />
+          <Property Name="FechaEntregaTransito" Type="varchar" MaxLength="70" />
+          <Property Name="NumeroPatenteAA" Type="varchar" MaxLength="70" />
+          <Property Name="ClavePedimento" Type="varchar" MaxLength="70" />
+          <Property Name="FechaCierreTransito" Type="varchar" MaxLength="70" />
+          <Property Name="PrimerPuertoEmbarque" Type="varchar" MaxLength="255" />
+          <Property Name="ProveedorMercancia" Type="varchar" MaxLength="100" />
+          <Property Name="DireccionProveedor" Type="varchar" MaxLength="500" />
+          <Property Name="ENTRYNumber" Type="varchar" MaxLength="32" />
+          <Property Name="NIUNumber" Type="varchar" MaxLength="32" />
+          <Property Name="Sellos" Type="varchar" MaxLength="255" />
+          <Property Name="Origen" Type="varchar" MaxLength="70" />
+          <Property Name="Destino" Type="varchar" MaxLength="70" />
+          <Property Name="RampaOrigen" Type="varchar" MaxLength="70" />
+          <Property Name="EscapeOrigen" Type="varchar" MaxLength="70" />
+          <Property Name="RampaDestino" Type="varchar" MaxLength="70" />
+          <Property Name="EscapeDestino" Type="varchar" MaxLength="70" />
+          <Property Name="RutaFerroviaria" Type="varchar" MaxLength="70" />
+          <Property Name="PuntoIntercambio" Type="varchar" MaxLength="70" />
+          <Property Name="Seleccion" Type="varchar" MaxLength="70" />
+          <Property Name="NumeroFactura" Type="varchar" MaxLength="70" />
+          <Property Name="FechaRetorno" Type="varchar" MaxLength="70" />
+          <Property Name="DestinoRetorno" Type="varchar" MaxLength="70" />
+          <Property Name="FechaConfiscado" Type="varchar" MaxLength="70" />
+          <Property Name="Desconsolidado" Type="varchar" MaxLength="70" />
+          <Property Name="Consolidado" Type="varchar" MaxLength="70" />
+          <Property Name="LlenoVacio" Type="varchar" MaxLength="70" />
+          <Property Name="Peso" Type="varchar" MaxLength="70" />
+          <Property Name="Piezas" Type="varchar" MaxLength="70" />
+          <Property Name="Unidad" Type="varchar" MaxLength="70" />
+          <Property Name="SellosSalida" Type="varchar" MaxLength="70" />
+          <Property Name="EstatusAduanal" Type="varchar" MaxLength="70" />
+          <Property Name="PlataformaSalida" Type="varchar" MaxLength="70" />
+          <Property Name="ReferenciaCliente" Type="varchar" MaxLength="70" />
+          <Property Name="ComentariosPedimento" Type="varchar" MaxLength="70" />
+          <Property Name="Posicion" Type="varchar" MaxLength="70" />
+          <Property Name="UMPeso" Type="varchar" MaxLength="70" />
+          <Property Name="FechaAvisoAbandono" Type="varchar" MaxLength="70" />
+          <Property Name="ObservacionActaEntrega" Type="varchar" MaxLength="70" />
+          <Property Name="InfRelMcia" Type="varchar" MaxLength="70" />
+          <Property Name="ComentariosPlanCarga" Type="varchar" MaxLength="70" />
+          <Property Name="Consignatario" Type="varchar" MaxLength="60" />
+          <Property Name="TipoContenedor" Type="varchar" MaxLength="20" />
+          <Property Name="FechaIngreso" Type="datetime" />
+          <Property Name="FechaManiobra" Type="datetime" />
+          <Property Name="FechaSalida" Type="datetime" />
+          <Property Name="Estadia" Type="int" />
+          <Property Name="Almacenaje" Type="int" />
+          <Property Name="EmpresaTransferencia" Type="varchar" MaxLength="255" />
+          <Property Name="FechaTransferencia" Type="datetime" />
+          <Property Name="PedimentoSalida" Type="varchar" MaxLength="70" />
+          <Property Name="NumeroPatenteSalida" Type="varchar" MaxLength="70" />
+          <Property Name="ClavePedimentoSalida" Type="varchar" MaxLength="70" />
+          <Property Name="FechaEscritura" Type="datetime" />
+          <Property Name="TerminalId" Type="int" />
+          <Property Name="DomicilioConsignatario" Type="varchar" MaxLength="100" />
+          <Property Name="TipoManiobra" Type="varchar" MaxLength="20" />
+          <Property Name="ClaseManiobra" Type="varchar" MaxLength="15" />
+          <Property Name="Facturatario" Type="varchar" MaxLength="70" />
+          <Property Name="EdiGenerado" Type="bit" />
+          <Property Name="AgenteAduanal" Type="varchar" MaxLength="70" />
+          <Property Name="FechaDestinoRetorno" Type="varchar" MaxLength="255" />
+          <Property Name="FechaAbandono" Type="datetime" />
+          <Property Name="FechaManiobraAnden" Type="datetime" />
+          <Property Name="FolioCFDI" Type="varchar" MaxLength="70" />
+          <Property Name="MontoCFDI" Type="varchar" MaxLength="70" />
+          <Property Name="MontoAlmacenaje" Type="varchar" MaxLength="70" />
+          <Property Name="CompensacionAlmacenaje" Type="varchar" MaxLength="70" />
+          <Property Name="MciaAsignadoAduana" Type="varchar" MaxLength="70" />
+          <Property Name="OficioAduana" Type="varchar" MaxLength="100" />
+          <Property Name="OficioAduanaFisco" Type="varchar" MaxLength="70" />
+          <Property Name="AlmacenajeASolicitud" Type="varchar" MaxLength="70" />
+          <Property Name="VolumenMercancia" Type="varchar" MaxLength="70" />
+          <Property Name="IdCatPuertoAduana" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="UserNameHR" Type="nvarchar" MaxLength="256" />
+          <Property Name="FechaHR" Type="datetime" />
+          <Property Name="HR" Type="bit" />
+          <Property Name="UserNameCT" Type="nvarchar" MaxLength="256" />
+          <Property Name="FechaCT" Type="datetime" />
+          <Property Name="Comentarios" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Imex_Info_EntregaAduana_Pedimentos">
+          <Key>
+            <PropertyRef Name="PedimentoId" />
+          </Key>
+          <Property Name="PedimentoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InfoEntregaId" Type="int" Nullable="false" />
+          <Property Name="Anio" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="CodigoDespacho" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="NumeroPedimento" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ClavePedimento" Type="nvarchar" MaxLength="3" />
+          <Property Name="Remesa" Type="nvarchar" MaxLength="15" />
+          <Property Name="TipoPedimento" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="ProcesadoTMS" Type="bit" />
+          <Property Name="FechaProcesadoTMS" Type="datetime" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="256" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="EnvioPedimentosId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Imex_Terminal">
+          <Key>
+            <PropertyRef Name="TerminalId" />
+          </Key>
+          <Property Name="TerminalId" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="256" />
+          <Property Name="Codigo" Type="varchar" MaxLength="3" />
+          <Property Name="Splc" Type="varchar" MaxLength="8" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Interpacifico" Type="bit" />
+          <Property Name="horas" Type="int" />
+          <Property Name="horaDiferencia" Type="int" />
+          <Property Name="EmailOperaciones" Type="varchar" MaxLength="255" />
+          <Property Name="AceptaCambioPatio" Type="bit" />
+          <Property Name="GeneraPedido" Type="bit" Nullable="false" />
+          <Property Name="Maritimo" Type="int" />
+          <Property Name="ATR" Type="bit" />
+          <Property Name="Intermodal" Type="bit" />
+          <Property Name="Latitud" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="Longitud" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="RutaServerLocal" Type="varchar" MaxLength="255" />
+          <Property Name="Remolques" Type="bit" />
+          <Property Name="Trasvase" Type="bit" />
+          <Property Name="SegmentoRed" Type="varchar" MaxLength="255" />
+          <Property Name="SIMEXPRO" Type="bit" />
+          <Property Name="SIMEX_API" Type="bit" />
+          <Property Name="MaxContainers" Type="int" />
+          <Property Name="TiempoRecoleccion" Type="int" />
+          <Property Name="Almacenaje" Type="int" />
+          <Property Name="Sidopla" Type="bit" />
+          <Property Name="SIDOPLAFiltradoCrossBorderSPLC" Type="bit" Nullable="false" />
+          <Property Name="CargaMasivaSidopla" Type="bit" Nullable="false" />
+          <Property Name="ValidaSoloContenedoresSidopla" Type="bit" Nullable="false" />
+          <Property Name="EnviaSAPMyR" Type="bit" />
+          <Property Name="ConsultaMaterialesSAPMyR" Type="bit" />
+          <Property Name="Recarga" Type="bit" />
+        </EntityType>
+        <Association Name="Cnt_Imex_Info_EntregaAduana_Tg1">
+          <End Role="Imex_Terminal" Type="Self.Imex_Terminal" Multiplicity="0..1" />
+          <End Role="Imex_Info_EntregaAduana" Type="Self.Imex_Info_EntregaAduana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imex_Terminal">
+              <PropertyRef Name="TerminalId" />
+            </Principal>
+            <Dependent Role="Imex_Info_EntregaAduana">
+              <PropertyRef Name="TerminalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cnt_Imex_Info_EntregaAduana_Tg2">
+          <End Role="Imex_Container" Type="Self.Imex_Container" Multiplicity="0..1" />
+          <End Role="Imex_Info_EntregaAduana" Type="Self.Imex_Info_EntregaAduana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imex_Container">
+              <PropertyRef Name="ContainerId" />
+            </Principal>
+            <Dependent Role="Imex_Info_EntregaAduana">
+              <PropertyRef Name="ContainerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InfoEntregaAduanaPedimentos_ToInfoEntregaAduana">
+          <End Role="Imex_Info_EntregaAduana" Type="Self.Imex_Info_EntregaAduana" Multiplicity="1" />
+          <End Role="Imex_Info_EntregaAduana_Pedimentos" Type="Self.Imex_Info_EntregaAduana_Pedimentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imex_Info_EntregaAduana">
+              <PropertyRef Name="InfoEntregaId" />
+            </Principal>
+            <Dependent Role="Imex_Info_EntregaAduana_Pedimentos">
+              <PropertyRef Name="InfoEntregaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GridInventarioV20" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="TipoServicioId" Type="int" Mode="In" />
+          <Parameter Name="TipoServicioIdFlag" Type="int" Mode="In" />
+          <Parameter Name="TerminalId" Type="int" Mode="In" />
+          <Parameter Name="TerminalFlag" Type="int" Mode="In" />
+          <Parameter Name="IdDeposito" Type="int" Mode="In" />
+          <Parameter Name="DepositoFlag" Type="int" Mode="In" />
+          <Parameter Name="IdCat_Patios" Type="int" Mode="In" />
+          <Parameter Name="IdCat_PatiosFlag" Type="int" Mode="In" />
+          <Parameter Name="ShipperId" Type="bigint" Mode="In" />
+          <Parameter Name="ShipperIdFlag" Type="int" Mode="In" />
+          <Parameter Name="Contenedor" Type="nvarchar" Mode="In" />
+          <Parameter Name="ContenedorFlag" Type="int" Mode="In" />
+          <Parameter Name="Chassis" Type="nvarchar" Mode="In" />
+          <Parameter Name="ChassisFlag" Type="int" Mode="In" />
+          <Parameter Name="Page" Type="int" Mode="In" />
+          <Parameter Name="Rows" Type="int" Mode="In" />
+          <Parameter Name="CondContenedor" Type="int" Mode="In" />
+          <Parameter Name="CondContenedorFlag" Type="int" Mode="In" />
+          <Parameter Name="CondChassis" Type="int" Mode="In" />
+          <Parameter Name="CondChassisFlag" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdatePedimentoExportacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="MembershipModelStoreContainer">
+          <EntitySet Name="Imex_Container" EntityType="Self.Imex_Container" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Imex_Info_EntregaAduana" EntityType="Self.Imex_Info_EntregaAduana" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Imex_Info_EntregaAduana_Pedimentos" EntityType="Self.Imex_Info_EntregaAduana_Pedimentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Imex_Terminal" EntityType="Self.Imex_Terminal" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Cnt_Imex_Info_EntregaAduana_Tg1" Association="Self.Cnt_Imex_Info_EntregaAduana_Tg1">
+            <End Role="Imex_Terminal" EntitySet="Imex_Terminal" />
+            <End Role="Imex_Info_EntregaAduana" EntitySet="Imex_Info_EntregaAduana" />
+          </AssociationSet>
+          <AssociationSet Name="Cnt_Imex_Info_EntregaAduana_Tg2" Association="Self.Cnt_Imex_Info_EntregaAduana_Tg2">
+            <End Role="Imex_Container" EntitySet="Imex_Container" />
+            <End Role="Imex_Info_EntregaAduana" EntitySet="Imex_Info_EntregaAduana" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InfoEntregaAduanaPedimentos_ToInfoEntregaAduana" Association="Self.FK_InfoEntregaAduanaPedimentos_ToInfoEntregaAduana">
+            <End Role="Imex_Info_EntregaAduana" EntitySet="Imex_Info_EntregaAduana" />
+            <End Role="Imex_Info_EntregaAduana_Pedimentos" EntitySet="Imex_Info_EntregaAduana_Pedimentos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MembershipModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Imex_Container">
+          <Key>
+            <PropertyRef Name="ContainerId" />
+          </Key>
+          <Property Name="ContainerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Container" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Imex_Info_EntregaAduana" Relationship="Self.Cnt_Imex_Info_EntregaAduana_Tg2" FromRole="Imex_Container" ToRole="Imex_Info_EntregaAduana" />
+        </EntityType>
+        <EntityType Name="Imex_Info_EntregaAduana">
+          <Key>
+            <PropertyRef Name="InfoEntregaId" />
+          </Key>
+          <Property Name="InfoEntregaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntregaId" Type="Int32" />
+          <Property Name="ContainerId" Type="Int32" />
+          <Property Name="TranTypeId" Type="Int32" />
+          <Property Name="ImpoExpo" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Entry" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Guia" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="LiberoAduana" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="FechaLiberado" Type="DateTime" Precision="3" />
+          <Property Name="SalioTren" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SalioPuerta" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="UltimoModificado" Type="DateTime" Precision="3" />
+          <Property Name="DocEntrega" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BL" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Regimen" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Pedimento" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="DescripcionMercancia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ValorComercial" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="PesoMercancia" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="UM" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Bultos" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="UM_Bultos" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="FechaEntregaTransito" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroPatenteAA" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="ClavePedimento" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCierreTransito" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="PrimerPuertoEmbarque" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProveedorMercancia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DireccionProveedor" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ENTRYNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="NIUNumber" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Sellos" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Origen" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Destino" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="RampaOrigen" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="EscapeOrigen" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="RampaDestino" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="EscapeDestino" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="RutaFerroviaria" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="PuntoIntercambio" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Seleccion" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroFactura" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="FechaRetorno" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="DestinoRetorno" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="FechaConfiscado" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Desconsolidado" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Consolidado" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="LlenoVacio" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Peso" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Piezas" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Unidad" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="SellosSalida" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="EstatusAduanal" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="PlataformaSalida" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="ReferenciaCliente" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="ComentariosPedimento" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Posicion" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="UMPeso" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="FechaAvisoAbandono" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="ObservacionActaEntrega" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="InfRelMcia" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="ComentariosPlanCarga" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Consignatario" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TipoContenedor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
+          <Property Name="FechaManiobra" Type="DateTime" Precision="3" />
+          <Property Name="FechaSalida" Type="DateTime" Precision="3" />
+          <Property Name="Estadia" Type="Int32" />
+          <Property Name="Almacenaje" Type="Int32" />
+          <Property Name="EmpresaTransferencia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FechaTransferencia" Type="DateTime" Precision="3" />
+          <Property Name="PedimentoSalida" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroPatenteSalida" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="ClavePedimentoSalida" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="FechaEscritura" Type="DateTime" Precision="3" />
+          <Property Name="TerminalId" Type="Int32" />
+          <Property Name="DomicilioConsignatario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TipoManiobra" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ClaseManiobra" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Facturatario" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="EdiGenerado" Type="Boolean" />
+          <Property Name="AgenteAduanal" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="FechaDestinoRetorno" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FechaAbandono" Type="DateTime" Precision="3" />
+          <Property Name="FechaManiobraAnden" Type="DateTime" Precision="3" />
+          <Property Name="FolioCFDI" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="MontoCFDI" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="MontoAlmacenaje" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="CompensacionAlmacenaje" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="MciaAsignadoAduana" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="OficioAduana" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OficioAduanaFisco" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="AlmacenajeASolicitud" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="VolumenMercancia" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="IdCatPuertoAduana" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="UserNameHR" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FechaHR" Type="DateTime" Precision="3" />
+          <Property Name="HR" Type="Boolean" />
+          <Property Name="UserNameCT" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FechaCT" Type="DateTime" Precision="3" />
+          <Property Name="Comentarios" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Imex_Container" Relationship="Self.Cnt_Imex_Info_EntregaAduana_Tg2" FromRole="Imex_Info_EntregaAduana" ToRole="Imex_Container" />
+          <NavigationProperty Name="Imex_Terminal" Relationship="Self.Cnt_Imex_Info_EntregaAduana_Tg1" FromRole="Imex_Info_EntregaAduana" ToRole="Imex_Terminal" />
+          <NavigationProperty Name="Imex_Info_EntregaAduana_Pedimentos" Relationship="Self.FK_InfoEntregaAduanaPedimentos_ToInfoEntregaAduana" FromRole="Imex_Info_EntregaAduana" ToRole="Imex_Info_EntregaAduana_Pedimentos" />
+        </EntityType>
+        <EntityType Name="Imex_Info_EntregaAduana_Pedimentos">
+          <Key>
+            <PropertyRef Name="PedimentoId" />
+          </Key>
+          <Property Name="PedimentoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InfoEntregaId" Type="Int32" Nullable="false" />
+          <Property Name="Anio" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodigoDespacho" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NumeroPedimento" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClavePedimento" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Remesa" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TipoPedimento" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProcesadoTMS" Type="Boolean" />
+          <Property Name="FechaProcesadoTMS" Type="DateTime" Precision="3" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="Usuario" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="EnvioPedimentosId" Type="Int64" />
+          <NavigationProperty Name="Imex_Info_EntregaAduana" Relationship="Self.FK_InfoEntregaAduanaPedimentos_ToInfoEntregaAduana" FromRole="Imex_Info_EntregaAduana_Pedimentos" ToRole="Imex_Info_EntregaAduana" />
+        </EntityType>
+        <EntityType Name="Imex_Terminal">
+          <Key>
+            <PropertyRef Name="TerminalId" />
+          </Key>
+          <Property Name="TerminalId" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Codigo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Splc" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Interpacifico" Type="Boolean" />
+          <Property Name="horas" Type="Int32" />
+          <Property Name="horaDiferencia" Type="Int32" />
+          <Property Name="EmailOperaciones" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AceptaCambioPatio" Type="Boolean" />
+          <Property Name="GeneraPedido" Type="Boolean" Nullable="false" />
+          <Property Name="Maritimo" Type="Int32" />
+          <Property Name="ATR" Type="Boolean" />
+          <Property Name="Intermodal" Type="Boolean" />
+          <Property Name="Latitud" Type="Decimal" Precision="9" Scale="6" />
+          <Property Name="Longitud" Type="Decimal" Precision="9" Scale="6" />
+          <Property Name="RutaServerLocal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Remolques" Type="Boolean" />
+          <Property Name="Trasvase" Type="Boolean" />
+          <Property Name="SegmentoRed" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SIMEXPRO" Type="Boolean" />
+          <Property Name="SIMEX_API" Type="Boolean" />
+          <Property Name="MaxContainers" Type="Int32" />
+          <Property Name="TiempoRecoleccion" Type="Int32" />
+          <Property Name="Almacenaje" Type="Int32" />
+          <Property Name="Sidopla" Type="Boolean" />
+          <Property Name="SIDOPLAFiltradoCrossBorderSPLC" Type="Boolean" Nullable="false" />
+          <Property Name="CargaMasivaSidopla" Type="Boolean" Nullable="false" />
+          <Property Name="ValidaSoloContenedoresSidopla" Type="Boolean" Nullable="false" />
+          <Property Name="EnviaSAPMyR" Type="Boolean" />
+          <Property Name="ConsultaMaterialesSAPMyR" Type="Boolean" />
+          <Property Name="Recarga" Type="Boolean" />
+          <NavigationProperty Name="Imex_Info_EntregaAduana" Relationship="Self.Cnt_Imex_Info_EntregaAduana_Tg1" FromRole="Imex_Terminal" ToRole="Imex_Info_EntregaAduana" />
+        </EntityType>
+        <Association Name="Cnt_Imex_Info_EntregaAduana_Tg2">
+          <End Role="Imex_Container" Type="Self.Imex_Container" Multiplicity="0..1" />
+          <End Role="Imex_Info_EntregaAduana" Type="Self.Imex_Info_EntregaAduana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imex_Container">
+              <PropertyRef Name="ContainerId" />
+            </Principal>
+            <Dependent Role="Imex_Info_EntregaAduana">
+              <PropertyRef Name="ContainerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cnt_Imex_Info_EntregaAduana_Tg1">
+          <End Role="Imex_Terminal" Type="Self.Imex_Terminal" Multiplicity="0..1" />
+          <End Role="Imex_Info_EntregaAduana" Type="Self.Imex_Info_EntregaAduana" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imex_Terminal">
+              <PropertyRef Name="TerminalId" />
+            </Principal>
+            <Dependent Role="Imex_Info_EntregaAduana">
+              <PropertyRef Name="TerminalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InfoEntregaAduanaPedimentos_ToInfoEntregaAduana">
+          <End Role="Imex_Info_EntregaAduana" Type="Self.Imex_Info_EntregaAduana" Multiplicity="1" />
+          <End Role="Imex_Info_EntregaAduana_Pedimentos" Type="Self.Imex_Info_EntregaAduana_Pedimentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imex_Info_EntregaAduana">
+              <PropertyRef Name="InfoEntregaId" />
+            </Principal>
+            <Dependent Role="Imex_Info_EntregaAduana_Pedimentos">
+              <PropertyRef Name="InfoEntregaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MembershipEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Imex_Container" EntityType="Self.Imex_Container" />
+          <EntitySet Name="Imex_Info_EntregaAduana" EntityType="Self.Imex_Info_EntregaAduana" />
+          <EntitySet Name="Imex_Info_EntregaAduana_Pedimentos" EntityType="Self.Imex_Info_EntregaAduana_Pedimentos" />
+          <EntitySet Name="Imex_Terminal" EntityType="Self.Imex_Terminal" />
+          <AssociationSet Name="Cnt_Imex_Info_EntregaAduana_Tg2" Association="Self.Cnt_Imex_Info_EntregaAduana_Tg2">
+            <End Role="Imex_Container" EntitySet="Imex_Container" />
+            <End Role="Imex_Info_EntregaAduana" EntitySet="Imex_Info_EntregaAduana" />
+          </AssociationSet>
+          <AssociationSet Name="Cnt_Imex_Info_EntregaAduana_Tg1" Association="Self.Cnt_Imex_Info_EntregaAduana_Tg1">
+            <End Role="Imex_Terminal" EntitySet="Imex_Terminal" />
+            <End Role="Imex_Info_EntregaAduana" EntitySet="Imex_Info_EntregaAduana" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InfoEntregaAduanaPedimentos_ToInfoEntregaAduana" Association="Self.FK_InfoEntregaAduanaPedimentos_ToInfoEntregaAduana">
+            <End Role="Imex_Info_EntregaAduana" EntitySet="Imex_Info_EntregaAduana" />
+            <End Role="Imex_Info_EntregaAduana_Pedimentos" EntitySet="Imex_Info_EntregaAduana_Pedimentos" />
+          </AssociationSet>
+          <FunctionImport Name="GridInventarioV20" ReturnType="Collection(MembershipModel.GridInventarioV20_Result)">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="TipoServicioId" Mode="In" Type="Int32" />
+            <Parameter Name="TipoServicioIdFlag" Mode="In" Type="Int32" />
+            <Parameter Name="TerminalId" Mode="In" Type="Int32" />
+            <Parameter Name="TerminalFlag" Mode="In" Type="Int32" />
+            <Parameter Name="IdDeposito" Mode="In" Type="Int32" />
+            <Parameter Name="DepositoFlag" Mode="In" Type="Int32" />
+            <Parameter Name="IdCat_Patios" Mode="In" Type="Int32" />
+            <Parameter Name="IdCat_PatiosFlag" Mode="In" Type="Int32" />
+            <Parameter Name="ShipperId" Mode="In" Type="Int64" />
+            <Parameter Name="ShipperIdFlag" Mode="In" Type="Int32" />
+            <Parameter Name="Contenedor" Mode="In" Type="String" />
+            <Parameter Name="ContenedorFlag" Mode="In" Type="Int32" />
+            <Parameter Name="Chassis" Mode="In" Type="String" />
+            <Parameter Name="ChassisFlag" Mode="In" Type="Int32" />
+            <Parameter Name="Page" Mode="In" Type="Int32" />
+            <Parameter Name="Rows" Mode="In" Type="Int32" />
+            <Parameter Name="CondContenedor" Mode="In" Type="Int32" />
+            <Parameter Name="CondContenedorFlag" Mode="In" Type="Int32" />
+            <Parameter Name="CondChassis" Mode="In" Type="Int32" />
+            <Parameter Name="CondChassisFlag" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdatePedimentoExportacion" />
+        </EntityContainer>
+        <ComplexType Name="GridInventarioV20_Result">
+          <Property Type="Int32" Name="InventarioId" Nullable="false" />
+          <Property Type="Int32" Name="idCat_Patios" Nullable="false" />
+          <Property Type="String" Name="NombrePatio" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="Deposito" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="UserId" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Guia" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Chassis" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="Container" Nullable="true" MaxLength="13" />
+          <Property Type="Int32" Name="ContainerId" Nullable="true" />
+          <Property Type="String" Name="ShippersDescription" Nullable="true" MaxLength="256" />
+          <Property Type="Int32" Name="TipoServicioId" Nullable="false" />
+          <Property Type="String" Name="TipoServicio" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Terminal" Nullable="true" MaxLength="256" />
+          <Property Type="Int32" Name="ClasificacionContainerId" Nullable="true" />
+          <Property Type="String" Name="ClasificacionContainer" Nullable="true" MaxLength="5" />
+          <Property Type="Int32" Name="TamanioContainerId" Nullable="true" />
+          <Property Type="String" Name="TamaniosContainer" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="DaniosContainerId" Nullable="true" />
+          <Property Type="String" Name="DaniosContainer" Nullable="true" MaxLength="5" />
+          <Property Type="Int32" Name="TamanioChassisId" Nullable="true" />
+          <Property Type="String" Name="TamaniosChassis" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="DaniosChassisId" Nullable="true" />
+          <Property Type="String" Name="DaniosChassis" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="Sellos" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="LiberoAduana" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="Pedimento" Nullable="true" MaxLength="70" />
+          <Property Type="String" Name="ENTRYNumber" Nullable="true" MaxLength="32" />
+          <Property Type="String" Name="NIUNumber" Nullable="true" MaxLength="32" />
+          <Property Type="Int32" Name="AgingInDays" Nullable="true" />
+          <Property Type="String" Name="Estatus" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="Reservado" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="FechaUltimoEvento" Nullable="true" MaxLength="19" />
+          <Property Type="String" Name="UltimoEvento" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="Booking" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ComentarioContenedor" Nullable="true" />
+          <Property Type="String" Name="FechaComentarioContenedor" Nullable="true" MaxLength="19" />
+          <Property Type="String" Name="ComentarioChasis" Nullable="true" />
+          <Property Type="String" Name="FechaComentarioChasis" Nullable="true" MaxLength="19" />
+          <Property Type="String" Name="AlmacenajeDescripcion" Nullable="true" MaxLength="24" />
+          <Property Type="String" Name="Origen" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Destino" Nullable="true" MaxLength="256" />
+          <Property Type="Int32" Name="TerminalId" Nullable="true" />
+          <Property Type="String" Name="PreviousComments" Nullable="true" />
+          <Property Type="String" Name="PreviousCondition" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="DatePreviousComments" Nullable="true" MaxLength="19" />
+          <Property Type="Int32" Name="LocEspacialId" Nullable="true" />
+          <Property Type="String" Name="Zona" Nullable="true" MaxLength="3" />
+          <Property Type="Int32" Name="Bahia" Nullable="true" />
+          <Property Type="String" Name="FechaModificoPosicion" Nullable="true" MaxLength="19" />
+          <Property Type="String" Name="UsuarioModPosicion" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Material" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="TieneGPS" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="SerieGPS" Nullable="true" MaxLength="27" />
+          <Property Type="String" Name="Posicion" Nullable="true" MaxLength="13" />
+          <Property Type="String" Name="Arrendadora" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MembershipModelStoreContainer" CdmEntityContainer="MembershipEntities">
+          <EntitySetMapping Name="Imex_Container">
+            <EntityTypeMapping TypeName="MembershipModel.Imex_Container">
+              <MappingFragment StoreEntitySet="Imex_Container">
+                <ScalarProperty Name="ContainerId" ColumnName="ContainerId" />
+                <ScalarProperty Name="Container" ColumnName="Container" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imex_Info_EntregaAduana">
+            <EntityTypeMapping TypeName="MembershipModel.Imex_Info_EntregaAduana">
+              <MappingFragment StoreEntitySet="Imex_Info_EntregaAduana">
+                <ScalarProperty Name="InfoEntregaId" ColumnName="InfoEntregaId" />
+                <ScalarProperty Name="EntregaId" ColumnName="EntregaId" />
+                <ScalarProperty Name="ContainerId" ColumnName="ContainerId" />
+                <ScalarProperty Name="TranTypeId" ColumnName="TranTypeId" />
+                <ScalarProperty Name="ImpoExpo" ColumnName="ImpoExpo" />
+                <ScalarProperty Name="Entry" ColumnName="Entry" />
+                <ScalarProperty Name="Guia" ColumnName="Guia" />
+                <ScalarProperty Name="LiberoAduana" ColumnName="LiberoAduana" />
+                <ScalarProperty Name="FechaLiberado" ColumnName="FechaLiberado" />
+                <ScalarProperty Name="SalioTren" ColumnName="SalioTren" />
+                <ScalarProperty Name="SalioPuerta" ColumnName="SalioPuerta" />
+                <ScalarProperty Name="UltimoModificado" ColumnName="UltimoModificado" />
+                <ScalarProperty Name="DocEntrega" ColumnName="DocEntrega" />
+                <ScalarProperty Name="BL" ColumnName="BL" />
+                <ScalarProperty Name="Regimen" ColumnName="Regimen" />
+                <ScalarProperty Name="Pedimento" ColumnName="Pedimento" />
+                <ScalarProperty Name="DescripcionMercancia" ColumnName="DescripcionMercancia" />
+                <ScalarProperty Name="ValorComercial" ColumnName="ValorComercial" />
+                <ScalarProperty Name="PesoMercancia" ColumnName="PesoMercancia" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="Bultos" ColumnName="Bultos" />
+                <ScalarProperty Name="UM_Bultos" ColumnName="UM_Bultos" />
+                <ScalarProperty Name="FechaEntregaTransito" ColumnName="FechaEntregaTransito" />
+                <ScalarProperty Name="NumeroPatenteAA" ColumnName="NumeroPatenteAA" />
+                <ScalarProperty Name="ClavePedimento" ColumnName="ClavePedimento" />
+                <ScalarProperty Name="FechaCierreTransito" ColumnName="FechaCierreTransito" />
+                <ScalarProperty Name="PrimerPuertoEmbarque" ColumnName="PrimerPuertoEmbarque" />
+                <ScalarProperty Name="ProveedorMercancia" ColumnName="ProveedorMercancia" />
+                <ScalarProperty Name="DireccionProveedor" ColumnName="DireccionProveedor" />
+                <ScalarProperty Name="ENTRYNumber" ColumnName="ENTRYNumber" />
+                <ScalarProperty Name="NIUNumber" ColumnName="NIUNumber" />
+                <ScalarProperty Name="Sellos" ColumnName="Sellos" />
+                <ScalarProperty Name="Origen" ColumnName="Origen" />
+                <ScalarProperty Name="Destino" ColumnName="Destino" />
+                <ScalarProperty Name="RampaOrigen" ColumnName="RampaOrigen" />
+                <ScalarProperty Name="EscapeOrigen" ColumnName="EscapeOrigen" />
+                <ScalarProperty Name="RampaDestino" ColumnName="RampaDestino" />
+                <ScalarProperty Name="EscapeDestino" ColumnName="EscapeDestino" />
+                <ScalarProperty Name="RutaFerroviaria" ColumnName="RutaFerroviaria" />
+                <ScalarProperty Name="PuntoIntercambio" ColumnName="PuntoIntercambio" />
+                <ScalarProperty Name="Seleccion" ColumnName="Seleccion" />
+                <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+                <ScalarProperty Name="FechaRetorno" ColumnName="FechaRetorno" />
+                <ScalarProperty Name="DestinoRetorno" ColumnName="DestinoRetorno" />
+                <ScalarProperty Name="FechaConfiscado" ColumnName="FechaConfiscado" />
+                <ScalarProperty Name="Desconsolidado" ColumnName="Desconsolidado" />
+                <ScalarProperty Name="Consolidado" ColumnName="Consolidado" />
+                <ScalarProperty Name="LlenoVacio" ColumnName="LlenoVacio" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Piezas" ColumnName="Piezas" />
+                <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+                <ScalarProperty Name="SellosSalida" ColumnName="SellosSalida" />
+                <ScalarProperty Name="EstatusAduanal" ColumnName="EstatusAduanal" />
+                <ScalarProperty Name="PlataformaSalida" ColumnName="PlataformaSalida" />
+                <ScalarProperty Name="ReferenciaCliente" ColumnName="ReferenciaCliente" />
+                <ScalarProperty Name="ComentariosPedimento" ColumnName="ComentariosPedimento" />
+                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+                <ScalarProperty Name="UMPeso" ColumnName="UMPeso" />
+                <ScalarProperty Name="FechaAvisoAbandono" ColumnName="FechaAvisoAbandono" />
+                <ScalarProperty Name="ObservacionActaEntrega" ColumnName="ObservacionActaEntrega" />
+                <ScalarProperty Name="InfRelMcia" ColumnName="InfRelMcia" />
+                <ScalarProperty Name="ComentariosPlanCarga" ColumnName="ComentariosPlanCarga" />
+                <ScalarProperty Name="Consignatario" ColumnName="Consignatario" />
+                <ScalarProperty Name="TipoContenedor" ColumnName="TipoContenedor" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="FechaManiobra" ColumnName="FechaManiobra" />
+                <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+                <ScalarProperty Name="Estadia" ColumnName="Estadia" />
+                <ScalarProperty Name="Almacenaje" ColumnName="Almacenaje" />
+                <ScalarProperty Name="EmpresaTransferencia" ColumnName="EmpresaTransferencia" />
+                <ScalarProperty Name="FechaTransferencia" ColumnName="FechaTransferencia" />
+                <ScalarProperty Name="PedimentoSalida" ColumnName="PedimentoSalida" />
+                <ScalarProperty Name="NumeroPatenteSalida" ColumnName="NumeroPatenteSalida" />
+                <ScalarProperty Name="ClavePedimentoSalida" ColumnName="ClavePedimentoSalida" />
+                <ScalarProperty Name="FechaEscritura" ColumnName="FechaEscritura" />
+                <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+                <ScalarProperty Name="DomicilioConsignatario" ColumnName="DomicilioConsignatario" />
+                <ScalarProperty Name="TipoManiobra" ColumnName="TipoManiobra" />
+                <ScalarProperty Name="ClaseManiobra" ColumnName="ClaseManiobra" />
+                <ScalarProperty Name="Facturatario" ColumnName="Facturatario" />
+                <ScalarProperty Name="EdiGenerado" ColumnName="EdiGenerado" />
+                <ScalarProperty Name="AgenteAduanal" ColumnName="AgenteAduanal" />
+                <ScalarProperty Name="FechaDestinoRetorno" ColumnName="FechaDestinoRetorno" />
+                <ScalarProperty Name="FechaAbandono" ColumnName="FechaAbandono" />
+                <ScalarProperty Name="FechaManiobraAnden" ColumnName="FechaManiobraAnden" />
+                <ScalarProperty Name="FolioCFDI" ColumnName="FolioCFDI" />
+                <ScalarProperty Name="MontoCFDI" ColumnName="MontoCFDI" />
+                <ScalarProperty Name="MontoAlmacenaje" ColumnName="MontoAlmacenaje" />
+                <ScalarProperty Name="CompensacionAlmacenaje" ColumnName="CompensacionAlmacenaje" />
+                <ScalarProperty Name="MciaAsignadoAduana" ColumnName="MciaAsignadoAduana" />
+                <ScalarProperty Name="OficioAduana" ColumnName="OficioAduana" />
+                <ScalarProperty Name="OficioAduanaFisco" ColumnName="OficioAduanaFisco" />
+                <ScalarProperty Name="AlmacenajeASolicitud" ColumnName="AlmacenajeASolicitud" />
+                <ScalarProperty Name="VolumenMercancia" ColumnName="VolumenMercancia" />
+                <ScalarProperty Name="IdCatPuertoAduana" ColumnName="IdCatPuertoAduana" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserNameHR" ColumnName="UserNameHR" />
+                <ScalarProperty Name="FechaHR" ColumnName="FechaHR" />
+                <ScalarProperty Name="HR" ColumnName="HR" />
+                <ScalarProperty Name="UserNameCT" ColumnName="UserNameCT" />
+                <ScalarProperty Name="FechaCT" ColumnName="FechaCT" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imex_Info_EntregaAduana_Pedimentos">
+            <EntityTypeMapping TypeName="MembershipModel.Imex_Info_EntregaAduana_Pedimentos">
+              <MappingFragment StoreEntitySet="Imex_Info_EntregaAduana_Pedimentos">
+                <ScalarProperty Name="PedimentoId" ColumnName="PedimentoId" />
+                <ScalarProperty Name="InfoEntregaId" ColumnName="InfoEntregaId" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="CodigoDespacho" ColumnName="CodigoDespacho" />
+                <ScalarProperty Name="NumeroPedimento" ColumnName="NumeroPedimento" />
+                <ScalarProperty Name="ClavePedimento" ColumnName="ClavePedimento" />
+                <ScalarProperty Name="Remesa" ColumnName="Remesa" />
+                <ScalarProperty Name="TipoPedimento" ColumnName="TipoPedimento" />
+                <ScalarProperty Name="ProcesadoTMS" ColumnName="ProcesadoTMS" />
+                <ScalarProperty Name="FechaProcesadoTMS" ColumnName="FechaProcesadoTMS" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="EnvioPedimentosId" ColumnName="EnvioPedimentosId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imex_Terminal">
+            <EntityTypeMapping TypeName="MembershipModel.Imex_Terminal">
+              <MappingFragment StoreEntitySet="Imex_Terminal">
+                <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Splc" ColumnName="Splc" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Interpacifico" ColumnName="Interpacifico" />
+                <ScalarProperty Name="horas" ColumnName="horas" />
+                <ScalarProperty Name="horaDiferencia" ColumnName="horaDiferencia" />
+                <ScalarProperty Name="EmailOperaciones" ColumnName="EmailOperaciones" />
+                <ScalarProperty Name="AceptaCambioPatio" ColumnName="AceptaCambioPatio" />
+                <ScalarProperty Name="GeneraPedido" ColumnName="GeneraPedido" />
+                <ScalarProperty Name="Maritimo" ColumnName="Maritimo" />
+                <ScalarProperty Name="ATR" ColumnName="ATR" />
+                <ScalarProperty Name="Intermodal" ColumnName="Intermodal" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="RutaServerLocal" ColumnName="RutaServerLocal" />
+                <ScalarProperty Name="Remolques" ColumnName="Remolques" />
+                <ScalarProperty Name="Trasvase" ColumnName="Trasvase" />
+                <ScalarProperty Name="SegmentoRed" ColumnName="SegmentoRed" />
+                <ScalarProperty Name="SIMEXPRO" ColumnName="SIMEXPRO" />
+                <ScalarProperty Name="SIMEX_API" ColumnName="SIMEX_API" />
+                <ScalarProperty Name="MaxContainers" ColumnName="MaxContainers" />
+                <ScalarProperty Name="TiempoRecoleccion" ColumnName="TiempoRecoleccion" />
+                <ScalarProperty Name="Almacenaje" ColumnName="Almacenaje" />
+                <ScalarProperty Name="Sidopla" ColumnName="Sidopla" />
+                <ScalarProperty Name="SIDOPLAFiltradoCrossBorderSPLC" ColumnName="SIDOPLAFiltradoCrossBorderSPLC" />
+                <ScalarProperty Name="CargaMasivaSidopla" ColumnName="CargaMasivaSidopla" />
+                <ScalarProperty Name="ValidaSoloContenedoresSidopla" ColumnName="ValidaSoloContenedoresSidopla" />
+                <ScalarProperty Name="EnviaSAPMyR" ColumnName="EnviaSAPMyR" />
+                <ScalarProperty Name="ConsultaMaterialesSAPMyR" ColumnName="ConsultaMaterialesSAPMyR" />
+                <ScalarProperty Name="Recarga" ColumnName="Recarga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GridInventarioV20" FunctionName="MembershipModel.Store.GridInventarioV20">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MembershipModel.GridInventarioV20_Result">
+                <ScalarProperty Name="InventarioId" ColumnName="InventarioId" />
+                <ScalarProperty Name="idCat_Patios" ColumnName="idCat_Patios" />
+                <ScalarProperty Name="NombrePatio" ColumnName="NombrePatio" />
+                <ScalarProperty Name="Deposito" ColumnName="Deposito" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Guia" ColumnName="Guia" />
+                <ScalarProperty Name="Chassis" ColumnName="Chassis" />
+                <ScalarProperty Name="Container" ColumnName="Container" />
+                <ScalarProperty Name="ContainerId" ColumnName="ContainerId" />
+                <ScalarProperty Name="ShippersDescription" ColumnName="ShippersDescription" />
+                <ScalarProperty Name="TipoServicioId" ColumnName="TipoServicioId" />
+                <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+                <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+                <ScalarProperty Name="ClasificacionContainerId" ColumnName="ClasificacionContainerId" />
+                <ScalarProperty Name="ClasificacionContainer" ColumnName="ClasificacionContainer" />
+                <ScalarProperty Name="TamanioContainerId" ColumnName="TamanioContainerId" />
+                <ScalarProperty Name="TamaniosContainer" ColumnName="TamaniosContainer" />
+                <ScalarProperty Name="DaniosContainerId" ColumnName="DaniosContainerId" />
+                <ScalarProperty Name="DaniosContainer" ColumnName="DaniosContainer" />
+                <ScalarProperty Name="TamanioChassisId" ColumnName="TamanioChassisId" />
+                <ScalarProperty Name="TamaniosChassis" ColumnName="TamaniosChassis" />
+                <ScalarProperty Name="DaniosChassisId" ColumnName="DaniosChassisId" />
+                <ScalarProperty Name="DaniosChassis" ColumnName="DaniosChassis" />
+                <ScalarProperty Name="Sellos" ColumnName="Sellos" />
+                <ScalarProperty Name="LiberoAduana" ColumnName="LiberoAduana" />
+                <ScalarProperty Name="Pedimento" ColumnName="Pedimento" />
+                <ScalarProperty Name="ENTRYNumber" ColumnName="ENTRYNumber" />
+                <ScalarProperty Name="NIUNumber" ColumnName="NIUNumber" />
+                <ScalarProperty Name="AgingInDays" ColumnName="AgingInDays" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Reservado" ColumnName="Reservado" />
+                <ScalarProperty Name="FechaUltimoEvento" ColumnName="FechaUltimoEvento" />
+                <ScalarProperty Name="UltimoEvento" ColumnName="UltimoEvento" />
+                <ScalarProperty Name="Booking" ColumnName="Booking" />
+                <ScalarProperty Name="ComentarioContenedor" ColumnName="ComentarioContenedor" />
+                <ScalarProperty Name="FechaComentarioContenedor" ColumnName="FechaComentarioContenedor" />
+                <ScalarProperty Name="ComentarioChasis" ColumnName="ComentarioChasis" />
+                <ScalarProperty Name="FechaComentarioChasis" ColumnName="FechaComentarioChasis" />
+                <ScalarProperty Name="AlmacenajeDescripcion" ColumnName="AlmacenajeDescripcion" />
+                <ScalarProperty Name="Origen" ColumnName="Origen" />
+                <ScalarProperty Name="Destino" ColumnName="Destino" />
+                <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+                <ScalarProperty Name="PreviousComments" ColumnName="PreviousComments" />
+                <ScalarProperty Name="PreviousCondition" ColumnName="PreviousCondition" />
+                <ScalarProperty Name="DatePreviousComments" ColumnName="DatePreviousComments" />
+                <ScalarProperty Name="LocEspacialId" ColumnName="LocEspacialId" />
+                <ScalarProperty Name="Zona" ColumnName="Zona" />
+                <ScalarProperty Name="Bahia" ColumnName="Bahia" />
+                <ScalarProperty Name="FechaModificoPosicion" ColumnName="FechaModificoPosicion" />
+                <ScalarProperty Name="UsuarioModPosicion" ColumnName="UsuarioModPosicion" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="TieneGPS" ColumnName="TieneGPS" />
+                <ScalarProperty Name="SerieGPS" ColumnName="SerieGPS" />
+                <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+                <ScalarProperty Name="Arrendadora" ColumnName="Arrendadora" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdatePedimentoExportacion" FunctionName="MembershipModel.Store.UpdatePedimentoExportacion" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

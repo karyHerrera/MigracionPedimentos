@@ -17,7 +17,7 @@ namespace InsertarPedimentos
             string currentPath = ConfigurationManager.AppSettings["CarpetaArchivos"].ToString(); //Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);            
 
             Console.WriteLine($"El path donde debe de estar el archivo es el siguiente: {currentPath}");
-            Console.WriteLine("El nombre del archivo debe de ser Pedimentos.txt");
+            Console.WriteLine("El nombre del archivo debe de ser PedimentosInsertVF.txt");
             
             Console.WriteLine("Inicia el proceso de inserción");
 

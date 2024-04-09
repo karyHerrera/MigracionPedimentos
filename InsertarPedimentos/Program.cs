@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -13,7 +14,11 @@ namespace InsertarPedimentos
         static void Main(string[] args)
         {
 
-            string currentPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);            
+            string currentPath = ConfigurationManager.AppSettings["CarpetaArchivos"].ToString(); //Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);            
+
+            Console.WriteLine($"El path donde debe de estar el archivo es el siguiente: {currentPath}");
+            Console.WriteLine("El nombre del archivo debe de ser Pedimentos.txt");
+            
             Console.WriteLine("Inicia el proceso de inserción");
 
             InsertarPedimentosArchivo.LeerInsertaPedimentos(currentPath);

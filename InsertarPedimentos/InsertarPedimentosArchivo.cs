@@ -24,6 +24,11 @@ namespace InsertarPedimentos
 
             try
             {
+                if (File.Exists(Path.Combine(currPath, "ResultadoInsertarPedimentos.txt")))
+                {
+                    File.Delete(Path.Combine(currPath, "ResultadoInsertarPedimentos.txt"));
+                }
+
                 using (StreamWriter outputFile = new StreamWriter(Path.Combine(currPath, "ResultadoInsertarPedimentos.txt"), true))
                 {                    
                     try
@@ -77,30 +82,46 @@ namespace InsertarPedimentos
 
                                                 if (contAduana != null)
                                                 {
-                                                    insertPedimento = new Imex_Info_EntregaAduana_Pedimentos()
+
+                                                    if ((!string.IsNullOrEmpty(anio.Trim())) && (!string.IsNullOrEmpty(codigoDes.Trim())) &&
+                                                        (!string.IsNullOrEmpty(numeroPed.Trim())) && (!string.IsNullOrEmpty(clavePed.Trim())))
                                                     {
-                                                        InfoEntregaId = contAduana.InfoEntregaId,
-                                                        Anio = anio.Length > 2 ? anio.Substring(0, 2) : anio,
-                                                        CodigoDespacho = codigoDes.Length > 2 ? codigoDes.Substring(0, 2) : codigoDes,
-                                                        NumeroPedimento = numeroPed,
-                                                        ClavePedimento = clavePed.Length > 3 ? clavePed.Substring(0, 3) : clavePed,
-                                                        Remesa = remesa.Length > 15 ? remesa.Substring(0, 15) : remesa,
-                                                        TipoPedimento = tipoPed,
-                                                        ProcesadoTMS = true,
-                                                        FechaProcesadoTMS = DateTime.Now,
-                                                        Activo = true,
-                                                        FechaModificacion = DateTime.Now,
+                                                        insertPedimento = new Imex_Info_EntregaAduana_Pedimentos()
+                                                        {
+                                                            InfoEntregaId = contAduana.InfoEntregaId,
+                                                            Anio = anio.Length > 2 ? anio.Substring(0, 2) : anio,
+                                                            CodigoDespacho = codigoDes.Length > 2 ? codigoDes.Substring(0, 2) : codigoDes,
+                                                            NumeroPedimento = numeroPed,
+                                                            ClavePedimento = clavePed.Length > 3 ? clavePed.Substring(0, 3) : clavePed,
+                                                            Remesa = remesa.Length > 15 ? remesa.Substring(0, 15) : remesa,
+                                                            TipoPedimento = tipoPed,
+                                                            ProcesadoTMS = true,
+                                                            FechaProcesadoTMS = DateTime.Now,
+                                                            Activo = true,
+                                                            FechaModificacion = DateTime.Now,
 
-                                                    };
+                                                        };
 
-                                                    ctx.Imex_Info_EntregaAduana_Pedimentos.Add(insertPedimento);
-                                                    
-                                                    dataPed = string.IsNullOrEmpty(remesa.Trim()) ? $"{anio} {codigoDes} {numeroPed}" : $"{anio} {codigoDes} {numeroPed}-{remesa}";
-                                                    contAduana.Pedimento = dataPed;
+                                                        ctx.Imex_Info_EntregaAduana_Pedimentos.Add(insertPedimento);
+                                                        ctx.SaveChanges();
 
-                                                    ctx.SaveChanges();
+                                                        List<Imex_Info_EntregaAduana_Pedimentos> pedimentosEnt = ctx.Imex_Info_EntregaAduana_Pedimentos.Where(p => p.InfoEntregaId == contAduana.InfoEntregaId && p.TipoPedimento == "E").ToList();
 
-                                                    outputFile.WriteLine($"Para el contenedor {contenedor.Trim()},se inserto un pedimento ({dataPed})");
+                                                        //dataPed = string.IsNullOrEmpty(remesa.Trim()) ? $"{anio} {codigoDes} {numeroPed}" : $"{anio} {codigoDes} {numeroPed}-{remesa}";
+                                                        dataPed = string.Join("/", pedimentosEnt.Select(p => (($"{p.Anio} {p.CodigoDespacho} {p.NumeroPedimento}-{p.Remesa}".Trim()).EndsWith("-") ? ($"{p.Anio} {p.CodigoDespacho} {p.NumeroPedimento}-{p.Remesa}".Trim()).Remove(($"{p.Anio} {p.CodigoDespacho} {p.NumeroPedimento}-{p.Remesa}".Trim()).Length - 1, 1) : ($"{p.Anio} {p.CodigoDespacho} {p.NumeroPedimento}-{p.Remesa}".Trim()))));
+                                                        contAduana.Pedimento = dataPed.Length > 70 ? dataPed.Substring(0, 69) : dataPed;
+                                                        contAduana.ClavePedimento = pedimentosEnt.FirstOrDefault() != null ? pedimentosEnt.FirstOrDefault().ClavePedimento.Length > 70 ? pedimentosEnt.FirstOrDefault().ClavePedimento.Substring(0, 69) : pedimentosEnt.FirstOrDefault().ClavePedimento : null;
+
+                                                        ctx.SaveChanges();
+
+                                                        outputFile.WriteLine($"Para el contenedor {contenedor.Trim()},se inserto un pedimento ({dataPed})");
+                                                    }
+                                                    else
+                                                    {
+                                                        outputFile.WriteLine($"Para el contenedor {contenedor.Trim()}, al insertar un pedimento los datos: Año {anio}, Codigo Despacho {codigoDes}, Numero Pedimento {numeroPed}, Clave Pedimento {clavePed}, son obligatorios");
+                                                    }
+
+                                                   
                                                 }
                                                 else
                                                 {

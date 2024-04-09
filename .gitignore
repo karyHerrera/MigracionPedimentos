@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/MigracionPedimentos/App.config
+/InsertarPedimentos/App.config
+/InsertarPedimentos/ResultadoInsertarPedimentos.txt
+/InsertarPedimentos/Pedimentos.txt

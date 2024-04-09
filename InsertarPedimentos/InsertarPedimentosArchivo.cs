@@ -13,7 +13,7 @@ namespace InsertarPedimentos
         public static void LeerInsertaPedimentos(string currPath)
         {
             string sep = "\t";
-            string fullPath = $"{currPath}\\Pedimentos.txt";
+            string fullPath = $"{currPath}\\PedimentosInsertVF.txt";
             string contenedor, anio, codigoDes, numeroPed, clavePed, remesa, tipoPed;
             string[] arrayLine;
             Imex_Info_EntregaAduana_Pedimentos insertPedimento;
